@@ -4,10 +4,10 @@ import { initDB } from './config/db.js'
 import cors from 'cors'
 import rateLimiter from './middleware/rateLimiter.js'
 import transactionsRoute from './routes/transactionsRoute.js'
-import job from './config/cron.js'
+// import job from './config/cron.js'
 dotenv.config()
 const app = express()
-if(process.env.NODE_ENV==='production') job.start()
+// if(process.env.NODE_ENV==='production') job.start()
 app.use(cors())
 app.use(rateLimiter)
 app.use(express.json())

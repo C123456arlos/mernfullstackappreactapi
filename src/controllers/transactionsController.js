@@ -15,7 +15,7 @@ export async function createTransaction(req, res) {
      try {
          const {title, amount, category, user_id}= req.body
          if (!title || !user_id || !category || amount === undefined) {
-             return res.status(400).json({message:'all fileds are required'})
+             return res.status(400).json({message:'all fields are required'})
          }
         const transaction= await sql`
          INSERT INTO transactions(user_id, title, amount, category) 
